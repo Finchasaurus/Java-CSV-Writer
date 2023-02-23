@@ -112,7 +112,9 @@ public class CSVFile {
     private StringBuilder headersToString() {
         StringBuilder stringBuilder = new StringBuilder();
         for (String header : headers) {
-            stringBuilder.append(header + ",");
+            stringBuilder.append(header);
+            if (headers.indexOf(header) != headers.size() - 1)
+                stringBuilder.append(",");
         }
         return stringBuilder;
     }
@@ -124,10 +126,10 @@ public class CSVFile {
             stringBuilder.append("\n");
             for (int j = 0; j < headers.size(); j++) {
                 if (data.get(headers.get(j)).size() > i) {
-                    stringBuilder.append(data.get(headers.get(j)).get(i) + ",");
-                } else {
-                    stringBuilder.append(",");
+                    stringBuilder.append(data.get(headers.get(j)).get(i));
                 }
+                if (j != headers.size() - 1)
+                    stringBuilder.append(",");
             }
         }
         return stringBuilder;
