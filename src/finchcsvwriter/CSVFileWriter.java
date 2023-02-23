@@ -44,7 +44,7 @@ public class CSVFileWriter {
     public static File writeCSVFile(String identifier, String filepath) throws FileNotFoundException {
         if (!files.containsKey(identifier))
             throw new FileNotFoundException();
-        filepath.replace(filepath, ".csv");
+        filepath = filepath.replace(".csv", "");
         CSVFile csvData = files.get(identifier);
         File file = new File(filepath + ".csv");
         try (PrintWriter printWriter = new PrintWriter(file)) {

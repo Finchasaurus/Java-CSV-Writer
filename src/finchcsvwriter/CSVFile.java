@@ -55,7 +55,10 @@ public class CSVFile {
      * @throws IndexOutOfBoundsException throws if the header does not exist.
      */
     public CSVFile setHeader(String header, int index) throws IndexOutOfBoundsException {
+        ArrayList<String> d = data.get(headers.get(index));
+        data.remove(headers.get(index));
         headers.set(index, header);
+        data.put(header, d);
         return this;
     }
 
