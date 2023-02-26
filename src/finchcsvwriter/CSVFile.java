@@ -18,9 +18,6 @@ public class CSVFile {
     // holds data
     private Map<String, ArrayList<String>> data = new HashMap<>();
 
-    CSVFile() {
-    }
-
     /**
      * adds a single header to the file. internally creates a new column
      * automatically.

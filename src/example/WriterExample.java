@@ -11,7 +11,7 @@ public class WriterExample {
     public static void main(String[] args) throws NameNotFoundException, FileNotFoundException {
 
         // creating the file internatlly.
-        CSVFile petFile = CSVFileWriter.createCSVFile("PetList");
+        CSVFile petFile = new CSVFile();
 
         // creating initial headers
         // you can add multiple
@@ -34,8 +34,8 @@ public class WriterExample {
         petFile.setData("Raccoons", "Good Boy", 0);
 
         // you can include the file type
-        CSVFileWriter.writeCSVFile("PetList", "src/example/pets.csv");
+        CSVFileWriter.writeCSVFile(petFile, "src/example/pets.csv");
         // or not, its up to you
-        CSVFileWriter.writeCSVFile("PetList", "src/example/pets");
+        CSVFileWriter.writeCSVFile(petFile, "src/example/pets");
     }
 }
